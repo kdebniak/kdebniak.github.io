@@ -7,11 +7,11 @@
     <style>
         /* The Color Palette - Hues of Pastel Pink */
         :root {
-            --bg-color: #FFF5F7; 
-            --text-color: #3E2A2F; 
-            --pink-main: #FADADD; 
-            --pink-light: #FDF0F2; 
-            --pink-accent: #F4C2C2; 
+            --bg-color: #FFF5F7; /* Very pale blush-tinted off-white */
+            --text-color: #3E2A2F; /* Deep warm slate/mauve for high readability */
+            --pink-main: #FADADD; /* Classic blush pink for nav and header */
+            --pink-light: #FDF0F2; /* Softest pink for leadership section background */
+            --pink-accent: #F4C2C2; /* Slightly deeper baby pink for hover/buttons */
             --white: #FFFFFF;
         }
 
@@ -23,7 +23,7 @@
         }
 
         html {
-            scroll-behavior: smooth; 
+            scroll-behavior: smooth; /* Smooth scrolling for navigation links */
         }
 
         body {
@@ -38,7 +38,7 @@
             margin-bottom: 15px;
         }
 
-        /* Navigation Bar */
+        /* Sticky Navigation Bar */
         nav {
             background-color: var(--pink-main);
             position: sticky;
@@ -75,7 +75,7 @@
             padding: 20px;
         }
 
-        /* Hero Section */
+        /* Hero Section (Top of page) */
         header {
             background-color: var(--pink-main);
             text-align: center;
@@ -86,8 +86,8 @@
         .profile-img {
             width: 200px;
             height: 200px;
-            object-fit: cover;
-            border-radius: 50%;
+            object-fit: cover; /* Ensures image isn't stretched */
+            border-radius: 50%; /* Makes image circular */
             border: 5px solid var(--white);
             box-shadow: 0 4px 15px rgba(244, 194, 194, 0.5);
             margin-bottom: 20px;
@@ -134,22 +134,22 @@
             background-color: var(--white);
         }
 
-        /* Sections */
+        /* General Section Styling */
         section {
             background-color: var(--white);
             padding: 40px;
             margin: 40px 0;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(244, 194, 194, 0.2); 
-            scroll-margin-top: 80px; 
+            scroll-margin-top: 80px; /* Offset for sticky nav when scrolling */
         }
 
-        /* Leadership Section - Distinct Soft Pink Background */
+        /* Leadership Section - Special Background */
         .leadership-section {
             background-color: var(--pink-light);
         }
 
-        /* Typography & Lists */
+        /* Typography & Lists within sections */
         p {
             margin-bottom: 15px;
         }
@@ -170,7 +170,7 @@
             margin-bottom: 10px;
         }
 
-        /* Contact Section */
+        /* Contact Section Links */
         .contact-links {
             list-style: none;
             padding: 0;
@@ -226,7 +226,7 @@
     </nav>
 
     <header>
-        <img src="Assets/ProfilePic.jpg" alt="Karolina Debniak" class="profile-img">
+        <img src="Assets/ProfilePic.JPG" alt="Karolina Debniak" class="profile-img">
         <h1>Hi, I'm Karolina Debniak.</h1>
         <p>An Accounting senior at Rutgers University combining analytical expertise in Audit & Assurance with a strong dedication to leadership, community service, and competitive sailing.</p>
         
@@ -255,8 +255,8 @@
             <p><strong>WilkinGuttenplan</strong> | Audit and Assurance<br>
             <em>January 2024 – Present</em></p>
             <ul>
-                <li>[Insert your specific daily duty here]</li>
-                <li>[Insert your specific skill/software here]</li>
+                <li>[Insert specific Daily Duty, e.g., Assisted with audits, reviews, and compilations for diverse client base.]</li>
+                <li>[Insert specific Skill/Software, e.g., Proficient in CCH ProSystem fx Engagement and advanced Excel.]</li>
                 <li>Successfully balanced a year-round professional accounting role with a rigorous academic course load and heavy extracurricular leadership commitments.</li>
             </ul>
         </section>
