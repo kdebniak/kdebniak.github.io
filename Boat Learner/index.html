@@ -1,0 +1,169 @@
+{
+  "exam_metadata": {
+    "discipline": "ISC",
+    "version": "2024_Evolution",
+    "total_questions": 10
+  },
+  "questions": [
+    {
+      "id": "ISC-MCQ-001",
+      "type": "MCQ",
+      "blueprint_area": "Security, Confidentiality and Privacy",
+      "topic": "Incident Response",
+      "skill_level": "Application",
+      "prompt": "During an incident response process, which of the following actions should be taken immediately after a malware breach has been identified and isolated from the rest of the network?",
+      "options": [
+        { "id": "A", "text": "Eradication of the threat components" },
+        { "id": "B", "text": "Recovery of systems to normal operations" },
+        { "id": "C", "text": "Preparation for future incidents" },
+        { "id": "D", "text": "Public disclosure of the breach to stakeholders" }
+      ],
+      "correct_answer": "A",
+      "explanation": "According to the standard Incident Response lifecycle, once a threat is isolated (Contained), the immediate next step is Eradication—which involves removing the threat components, such as deleting malware or disabling breached accounts."
+    },
+    {
+      "id": "ISC-MCQ-002",
+      "type": "MCQ",
+      "blueprint_area": "Considerations for SOC Engagements",
+      "topic": "Types of SOC Reports",
+      "skill_level": "Understanding",
+      "prompt": "Which of the following System and Organization Controls (SOC) reports is specifically designed to report on controls at a service organization that are relevant to user entities' internal control over financial reporting (ICFR)?",
+      "options": [
+        { "id": "A", "text": "SOC 1" },
+        { "id": "B", "text": "SOC 2" },
+        { "id": "C", "text": "SOC 3" },
+        { "id": "D", "text": "SOC for Cybersecurity" }
+      ],
+      "correct_answer": "A",
+      "explanation": "A SOC 1 report addresses controls relevant to a user entity's Internal Control over Financial Reporting (ICFR). SOC 2 and SOC 3 focus on the Trust Services Criteria (Security, Availability, Processing Integrity, Confidentiality, and Privacy)."
+    },
+    {
+      "id": "ISC-MCQ-003",
+      "type": "MCQ",
+      "blueprint_area": "Information Systems and Data Management",
+      "topic": "Data Structuring",
+      "skill_level": "Understanding",
+      "prompt": "In a relational database system, what is the primary purpose of a foreign key?",
+      "options": [
+        { "id": "A", "text": "To uniquely identify each record within a single table" },
+        { "id": "B", "text": "To encrypt sensitive data stored within the database" },
+        { "id": "C", "text": "To establish and enforce a link between the data in two tables" },
+        { "id": "D", "text": "To index data for faster search query performance" }
+      ],
+      "correct_answer": "C",
+      "explanation": "A foreign key is a column or group of columns in a relational database table that provides a link between data in two tables. It acts as a cross-reference between tables because it references the primary key of another table."
+    },
+    {
+      "id": "ISC-MCQ-004",
+      "type": "MCQ",
+      "blueprint_area": "Security, Confidentiality and Privacy",
+      "topic": "Logical Access Controls",
+      "skill_level": "Application",
+      "prompt": "An organization assigns system permissions based strictly on an employee's job title, department, and daily duties. Which access control model is this organization utilizing?",
+      "options": [
+        { "id": "A", "text": "Discretionary Access Control (DAC)" },
+        { "id": "B", "text": "Role-Based Access Control (RBAC)" },
+        { "id": "C", "text": "Mandatory Access Control (MAC)" },
+        { "id": "D", "text": "Attribute-Based Access Control (ABAC)" }
+      ],
+      "correct_answer": "B",
+      "explanation": "Role-Based Access Control (RBAC) restricts system access to authorized users based on their role within an organization (e.g., job title or department), streamlining the administration of user permissions."
+    },
+    {
+      "id": "ISC-MCQ-005",
+      "type": "MCQ",
+      "blueprint_area": "Information Systems and Data Management",
+      "topic": "Change Management",
+      "skill_level": "Analysis",
+      "prompt": "To maintain proper segregation of duties within an IT environment, which two functions MUST be kept strictly separate to prevent unauthorized code from being moved into the live environment?",
+      "options": [
+        { "id": "A", "text": "Systems Analysis and Application Programming" },
+        { "id": "B", "text": "Database Administration and Network Engineering" },
+        { "id": "C", "text": "Application Development and IT Operations/Deployment" },
+        { "id": "D", "text": "Help Desk Support and Hardware Maintenance" }
+      ],
+      "correct_answer": "C",
+      "explanation": "Segregation of duties requires that developers (who write the code) do not have the ability or access to push their own code into the live production environment (Operations/Deployment). This prevents malicious or untested code from going live."
+    },
+    {
+      "id": "ISC-MCQ-006",
+      "type": "MCQ",
+      "blueprint_area": "Security, Confidentiality and Privacy",
+      "topic": "Cryptography",
+      "skill_level": "Application",
+      "prompt": "When utilizing asymmetric encryption to send a highly sensitive and secure message over the internet, how should the sender encrypt the message?",
+      "options": [
+        { "id": "A", "text": "Using the sender's public key" },
+        { "id": "B", "text": "Using the sender's private key" },
+        { "id": "C", "text": "Using the recipient's public key" },
+        { "id": "D", "text": "Using the recipient's private key" }
+      ],
+      "correct_answer": "C",
+      "explanation": "In asymmetric (public key) cryptography, if the goal is confidentiality, the sender encrypts the message using the recipient's public key. The message can then only be decrypted by the recipient using their corresponding private key."
+    },
+    {
+      "id": "ISC-MCQ-007",
+      "type": "MCQ",
+      "blueprint_area": "Considerations for SOC Engagements",
+      "topic": "Trust Services Criteria",
+      "skill_level": "Understanding",
+      "prompt": "Under the AICPA Trust Services Criteria (TSC), which category specifically addresses whether information is designated as protected and restricted to authorized parties to meet the entity's objectives?",
+      "options": [
+        { "id": "A", "text": "Availability" },
+        { "id": "B", "text": "Processing Integrity" },
+        { "id": "C", "text": "Confidentiality" },
+        { "id": "D", "text": "Privacy" }
+      ],
+      "correct_answer": "C",
+      "explanation": "The Confidentiality criterion addresses whether information is protected and access is restricted. While similar, 'Privacy' specifically deals with the collection, use, retention, and disclosure of personal information (PII)."
+    },
+    {
+      "id": "ISC-MCQ-008",
+      "type": "MCQ",
+      "blueprint_area": "Security, Confidentiality and Privacy",
+      "topic": "Disaster Recovery",
+      "skill_level": "Analysis",
+      "prompt": "A company's business continuity plan dictates that its critical e-commerce systems must be restored and fully operational within 4 hours following a major disruption. This 4-hour threshold represents the company's:",
+      "options": [
+        { "id": "A", "text": "Recovery Point Objective (RPO)" },
+        { "id": "B", "text": "Recovery Time Objective (RTO)" },
+        { "id": "C", "text": "Mean Time Between Failures (MTBF)" },
+        { "id": "D", "text": "Service Level Agreement (SLA)" }
+      ],
+      "correct_answer": "B",
+      "explanation": "The Recovery Time Objective (RTO) is the maximum acceptable amount of time that an application or IT system can be down after a failure or disaster occurs before significant business impact happens."
+    },
+    {
+      "id": "ISC-MCQ-009",
+      "type": "MCQ",
+      "blueprint_area": "Information Systems and Data Management",
+      "topic": "Cloud Computing",
+      "skill_level": "Application",
+      "prompt": "In an Infrastructure as a Service (IaaS) cloud computing model, which of the following responsibilities typically remains with the cloud service customer rather than the cloud provider?",
+      "options": [
+        { "id": "A", "text": "Physical security of the data center" },
+        { "id": "B", "text": "Maintenance of the hypervisor and virtualization layer" },
+        { "id": "C", "text": "Provisioning of hard drives and server racks" },
+        { "id": "D", "text": "Patching and securing the guest Operating System (OS)" }
+      ],
+      "correct_answer": "D",
+      "explanation": "In an IaaS model (like AWS EC2 or Azure VMs), the provider manages the physical infrastructure, network, and virtualization layer. The customer is responsible for the OS, middleware, applications, and their data."
+    },
+    {
+      "id": "ISC-MCQ-010",
+      "type": "MCQ",
+      "blueprint_area": "Considerations for SOC Engagements",
+      "topic": "SOC Reports",
+      "skill_level": "Analysis",
+      "prompt": "An IT auditor is preparing a SOC 2 report. If the auditor only performs procedures to determine whether the service organization's controls were properly designed and implemented as of a specific date, which type of report are they issuing?",
+      "options": [
+        { "id": "A", "text": "Type 1 Report" },
+        { "id": "B", "text": "Type 2 Report" },
+        { "id": "C", "text": "SOC 3 Report" },
+        { "id": "D", "text": "Agreed-Upon Procedures Report" }
+      ],
+      "correct_answer": "A",
+      "explanation": "A Type 1 report covers the suitability of the design of controls at a specific point in time. A Type 2 report goes further to test the operating effectiveness of those controls over a specified period of time (e.g., 6 to 12 months)."
+    }
+  ]
+}
