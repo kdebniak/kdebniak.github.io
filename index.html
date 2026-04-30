@@ -170,6 +170,21 @@
             margin-bottom: 10px;
         }
 
+        /* App Embed / Iframe styling */
+        .project-container {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .app-iframe {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #e1e1e1;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            background-color: var(--white);
+        }
+
         /* Contact Section Links */
         .contact-links {
             list-style: none;
@@ -211,6 +226,9 @@
                 flex-direction: column;
                 padding: 0 20px;
             }
+            .app-iframe {
+                height: 550px; /* Shorter for mobile screens */
+            }
         }
     </style>
 </head>
@@ -221,6 +239,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -276,6 +295,20 @@
                 <li><strong>Animal Welfare Volunteer:</strong> Regularly walk dogs and support shelter operations at St. Hubert's Animal Shelter in Madison, NJ.</li>
                 <li><strong>Local New Brunswick Service:</strong> Dedicated time and energy to Unity Square Community Center and Elijah's Promise, supporting local enrichment and food equity initiatives in the Rutgers area.</li>
             </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-container">
+                <h3>Boat Learner Quiz</h3>
+                <p>A maritime trivia app built with JavaScript to test your sailing knowledge.</p>
+                <iframe 
+                    src="Boat%20Learner/index.html" 
+                    title="Boat Learner App"
+                    class="app-iframe"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </section>
 
         <section id="contact">
