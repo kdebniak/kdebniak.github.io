@@ -7,11 +7,11 @@
     <style>
         /* The Color Palette - Hues of Pastel Pink */
         :root {
-            --bg-color: #FFF5F7; /* Very pale blush-tinted off-white */
-            --text-color: #3E2A2F; /* Deep warm slate/mauve for high readability */
-            --pink-main: #FADADD; /* Classic blush pink for nav and header */
-            --pink-light: #FDF0F2; /* Softest pink for leadership section background */
-            --pink-accent: #F4C2C2; /* Slightly deeper baby pink for hover/buttons */
+            --bg-color: #FFF5F7; 
+            --text-color: #3E2A2F; 
+            --pink-main: #FADADD; 
+            --pink-light: #FDF0F2; 
+            --pink-accent: #F4C2C2; 
             --white: #FFFFFF;
         }
 
@@ -23,7 +23,7 @@
         }
 
         html {
-            scroll-behavior: smooth; /* Smooth scrolling for navigation links */
+            scroll-behavior: smooth; 
         }
 
         body {
@@ -86,8 +86,8 @@
         .profile-img {
             width: 200px;
             height: 200px;
-            object-fit: cover; /* Ensures image isn't stretched */
-            border-radius: 50%; /* Makes image circular */
+            object-fit: cover; 
+            border-radius: 50%; 
             border: 5px solid var(--white);
             box-shadow: 0 4px 15px rgba(244, 194, 194, 0.5);
             margin-bottom: 20px;
@@ -141,18 +141,14 @@
             margin: 40px 0;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(244, 194, 194, 0.2); 
-            scroll-margin-top: 80px; /* Offset for sticky nav when scrolling */
+            scroll-margin-top: 80px; 
         }
 
-        /* Leadership Section - Special Background */
         .leadership-section {
             background-color: var(--pink-light);
         }
 
-        /* Typography & Lists within sections */
-        p {
-            margin-bottom: 15px;
-        }
+        p { margin-bottom: 15px; }
 
         h3 {
             margin-top: 25px;
@@ -166,11 +162,11 @@
             margin-bottom: 15px;
         }
 
-        li {
-            margin-bottom: 10px;
-        }
+        li { margin-bottom: 10px; }
 
-        /* App Embed / Iframe styling */
+        /* =========================================
+           App Embed / Iframe styling
+           ========================================= */
         .project-container {
             width: 100%;
             margin-top: 20px;
@@ -203,7 +199,6 @@
             border-bottom-color: var(--pink-accent);
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 30px;
@@ -219,15 +214,13 @@
                 text-align: center;
                 padding: 10px 0;
             }
-            section {
-                padding: 25px;
-            }
+            section { padding: 25px; }
             .button-group {
                 flex-direction: column;
                 padding: 0 20px;
             }
             .app-iframe {
-                height: 550px; /* Shorter for mobile screens */
+                height: 550px; 
             }
         }
     </style>
@@ -302,12 +295,14 @@
             <div class="project-container">
                 <h3>Boat Learner Quiz</h3>
                 <p>A maritime trivia app built with JavaScript to test your sailing knowledge.</p>
+                
                 <iframe 
-                    src="Boat%20Learner/index.html" 
+                    src="./Boat Learner/index.html" 
                     title="Boat Learner App"
                     class="app-iframe"
                     allowfullscreen>
                 </iframe>
+                
             </div>
         </section>
 
