@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karolina Debniak | Portfolio</title>
+    <title>Brendan Brady | Rutgers Business School</title>
     <style>
         :root {
-            --pink-dark: #3E2A2F;      /* Dark text color for readability */
-            --pink-main: #FADADD;      /* Classic pastel pink for header */
-            --pink-accent: #F4C2C2;    /* Slightly darker pink for buttons/borders */
-            --bg-light: #FFF5F7;       /* Very light pink background */
-            --white: #ffffff;
-            --muted-text: #8C7A7D;
+            --rutgers-red: #cc0033;
+            --charcoal: #2d3748;
+            --accent-blue: #3182ce;
+            --bg-light: #f7fafc;
         }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--pink-dark);
+            color: var(--charcoal);
             background-color: var(--bg-light);
             line-height: 1.6;
         }
         header {
-            background-color: var(--pink-main);
-            border-bottom: 5px solid var(--pink-accent);
+            background-color: #ffffff;
+            border-bottom: 4px solid var(--rutgers-red);
             padding: 3rem 10%;
             text-align: left;
         }
@@ -32,23 +30,23 @@
             margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 2.5rem;
+            gap: 2rem;
         }
         
         .profile-photo {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--white);
-            box-shadow: 0 4px 15px rgba(244, 194, 194, 0.5);
+            border: 4px solid #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .header-text {
             flex: 1; 
         }
-        h1 { margin: 0; font-size: 2.8rem; color: var(--pink-dark); }
-        .headline { font-size: 1.2rem; color: var(--pink-dark); font-weight: 600; margin-top: 0.5rem; }
+        h1 { margin: 0; font-size: 2.8rem; color: #1a202c; }
+        .headline { font-size: 1.2rem; color: var(--rutgers-red); font-weight: 600; margin-top: 0.5rem; }
         
         .main-container {
             max-width: 1000px;
@@ -59,47 +57,37 @@
             gap: 2rem;
         }
         .card {
-            background: var(--white);
+            background: white;
             padding: 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(244, 194, 194, 0.2);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             margin-bottom: 2rem;
         }
-        h2 { border-left: 4px solid var(--pink-accent); padding-left: 1rem; margin-top: 0; font-size: 1.5rem; color: var(--pink-dark); }
+        h2 { border-left: 4px solid var(--rutgers-red); padding-left: 1rem; margin-top: 0; font-size: 1.5rem; }
         
         .exp-item { margin-bottom: 1.5rem; }
-        .exp-title { font-weight: 700; color: var(--pink-dark); display: block; font-size: 1.1rem;}
-        .exp-meta { color: var(--muted-text); font-size: 0.9rem; margin-bottom: 0.5rem; display: block; font-style: italic;}
+        .exp-title { font-weight: 700; color: #1a202c; display: block; }
+        .exp-meta { color: #718096; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
         
-        ul { padding-left: 20px; margin-top: 5px; }
-        li { margin-bottom: 8px; }
-
         .skill-tag {
             display: inline-block;
-            background: #FDF0F2;
-            color: var(--pink-dark);
+            background: #edf2f7;
+            color: #4a5568;
             padding: 0.4rem 0.8rem;
             border-radius: 6px;
             margin: 0.2rem;
             font-size: 0.85rem;
             font-weight: 600;
-            border: 1px solid var(--pink-accent);
         }
         .contact-btn {
             display: inline-block;
-            background-color: var(--white);
-            color: var(--pink-dark);
+            background-color: var(--rutgers-red);
+            color: white;
             padding: 0.8rem 1.5rem;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 6px;
             font-weight: 700;
             margin-top: 1rem;
-            transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        .contact-btn:hover {
-            background-color: var(--pink-accent);
-            transform: translateY(-2px);
         }
         
         @media (max-width: 768px) {
@@ -107,7 +95,7 @@
             .header-text { margin-bottom: 1.5rem; }
             .main-container { grid-template-columns: 1fr; }
             h1 { font-size: 2rem; }
-            .profile-photo { width: 140px; height: 140px; }
+            .profile-photo { width: 120px; height: 120px; }
         }
     </style>
 </head>
@@ -115,9 +103,89 @@
 
 <header>
     <div class="header-container">
-        <img src="headshot.png" alt="Karolina Debniak Headshot" class="profile-photo">
+        <img src="headshot.png" alt="Brendan Brady Headshot" class="profile-photo">
         
         <div class="header-text">
-            <h1>Karolina Debniak</h1>
-            <div class="headline">Accounting Major | Rutgers University | Audit & Assurance</div>
-            <p style="color: var(--pink-dark);">New Brunswick, NJ &bull; <a href="mailto:debniakkarolina@
+            <h1>Brendan Brady</h1>
+            <div class="headline">Accounting Major | Rutgers Business School | CPA Aspirant</div>
+            <p>Pompton, New Jersey &bull; <a href="mailto:bpb86@scarletmail.rutgers.edu" style="color: inherit;">bpb86@scarletmail.rutgers.edu</a></p>
+            <a href="https://www.linkedin.com/in/brendan-brady-91077528a" class="contact-btn">View LinkedIn Profile</a>
+        </div>
+    </div>
+</header>
+
+<div class="main-container">
+    <div class="left-col">
+        <div class="card">
+            <h2>About</h2>
+            <p>I am a motivated Accounting student at Rutgers Business School, dedicated to pursuing my CPA license upon graduation. My professional goal is to apply rigorous analytical thinking and accounting principles within the public accounting sector.</p>
+            <p>With a background that balances technical academic work with high-stakes leadership roles—including overseeing more than 30 children daily and managing safety protocols in aquatic environments—I have developed a unique ability to stay organized and collaborate effectively under pressure.</p>
+        </div>
+
+        <div class="card">
+            <h2>Experience</h2>
+            
+            <div class="exp-item">
+                <span class="exp-title" style="color: var(--rutgers-red);">Incoming Accounting Intern</span>
+                <span class="exp-meta">Malesardi, Quackenbush, Swift & Company LLC | Starts June 2026</span>
+                <p>Selected for a competitive summer internship program focused on public accounting, tax preparation, and audit support.</p>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-title">Senior Camp Counselor</span>
+                <span class="exp-meta">Boys and Girls Club of Pequannock | June 2023 – Present</span>
+                <ul>
+                    <li>Lead a team of 3+ counselors-in-training to ensure an engaging and safe environment for 30+ children daily.</li>
+                    <li>Developed structured activity schedules and managed conflict resolution with a focus on teamwork and safety.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-title">Lifeguard</span>
+                <span class="exp-meta">PV Park | Aug 2020 – Aug 2023</span>
+                <p>Maintained vigilance over a 3-acre lakefront area, strictly enforcing safety protocols and providing emergency response when necessary.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-col">
+        <div class="card">
+            <h2>Education</h2>
+            <p><strong>Rutgers Business School</strong><br>
+            B.S. in Accounting<br>
+            <span style="color: #718096;">Expected May 2027</span></p>
+            <p><strong>Loyola University Maryland</strong><br>
+            Coursework in Finance and Python</p>
+        </div>
+
+        <div class="card">
+            <h2>Skills</h2>
+            <div class="skill-tag">Public Accounting</div>
+            <div class="skill-tag">Microsoft Office</div>
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">HTML</div>
+            <div class="skill-tag">Financial Analysis</div>
+            <div class="skill-tag">Leadership</div>
+            <div class="skill-tag">Conflict Resolution</div>
+            <div class="skill-tag">Time Management</div>
+        </div>
+
+        <div class="card" style="background: var(--charcoal); color: white;">
+            <h2 style="color: white; border-color: white;">Interactive Project</h2>
+            <p style="color: #cbd5e0;">I built a JavaScript-based quiz application to help accounting students prep for the Intermediate Accounting II final. Test your knowledge on Bonds, Leases, Pensions, and more.</p>
+            <a href="quiz.html" class="contact-btn" style="background-color: white; color: var(--charcoal); text-align: center; display: block;">Take the Quiz App</a>
+        </div>
+        <div class="card">
+            <h2>Certifications</h2>
+            <p style="font-size: 0.9rem;"><strong>KPMG U.S. Career Catalyst: Tax</strong><br>
+            <span style="color: #718096;">Forage | Issued Oct 2025</span></p>
+        </div>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 2rem; color: #a0aec0; font-size: 0.8rem;">
+    &copy; 2026 Brendan Brady | Built with GitHub Pages
+</footer>
+
+</body>
+</html>
