@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal Construction | Premier Landscaping & Masonry</title>
+    <style>
+        /* Modern Reset and Base Styles */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8fafc;
+            line-height: 1.6;
+        }
+        h1, h2, h3 { margin-top: 0; }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #ffffff;
+            border-bottom: 3px solid #e53e3e; /* Accent color */
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        header h1 {
+            color: #1a202c;
+            font-size: 1.8rem;
+        }
+        .contact-header {
+            font-weight: 700;
+            color: #e53e3e;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn {
+            background-color: #e53e3e;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+        .btn:hover { background-color: #c53030; }
+
+        /* Trust Banner */
+        .trust-banner {
+            background-color: #1a202c;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem 5%;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0.5rem;
+        }
+
+        /* Testimonials / Reviews Section */
+        .reviews-section {
+            padding: 5rem 5%;
+            background-color: #edf2f7;
+            text-align: center;
+        }
+        .reviews-section h2 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 3rem;
+        }
+        .review-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: 300px;
+            text-align: left;
+        }
+        .stars {
+            color: #ecc94b; /* Gold */
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .review-text {
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+        .reviewer-name {
+            font-weight: 700;
+            color: #1a202c;
+        }
+
+        /* Lead Capture Form Section */
+        .contact-section {
+            padding: 5rem 5%;
+            background: white;
+            display: flex;
+            justify-content: center;
+        }
+        .form-container {
+            background: #f8fafc;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 600px;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2d3748;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+        .submit-btn {
+            width: 100%;
+            background-color: #1a202c;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .submit-btn:hover { background-color: #2d3748; }
+
+        /* Footer */
+        footer {
+            background-color: #1a202c;
+            color: #a0aec0;
+            text-align: center;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Deal Construction</h1>
+        <div class="contact-header">&#9742; Call Now: [Insert Phone]</div>
+    </header>
+
+    <div class="hero">
+        <h2>Expert Craftsmanship, Built to Last.</h2>
+        <p>Proudly serving New Brunswick, NJ. From custom masonry to full-scale landscaping, we bring 31+ years of trusted experience to your property.</p>
+        <a href="#quote-form" class="btn">Get Your Free Estimate</a>
+    </div>
+
+    <div class="trust-banner">
+        <div class="trust-item">&#10003; 31+ Years in Business</div>
+        <div class="trust-item">&#10003; 24/7 Emergency Services</div>
+        <div class="trust-item">&#10003; Google Verified</div>
+        <div class="trust-item">&#10003; Free Estimates</div>
+    </div>
+
+    <div class="reviews-section">
+        <h2>What Our Clients Say</h2>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="review-text">"Placeholder for the first real customer review. This will highlight their great work on a patio or landscaping project."</div>
+                <div class="reviewer-name">- First Name L.</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="review-text">"Placeholder for the second review. Focus on their punctuality, 24/7 emergency response, or fair pricing."</div>
+                <div class="reviewer-name">- First Name L.</div>
+            </div>
+            <div class="review-card">
+                <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <div class="review-text">"Placeholder for the third review. Excellent craftsmanship and very professional to deal with from start to finish."</div>
+                <div class="reviewer-name">- First Name L.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section" id="quote-form">
+        <div class="form-container">
+            <h2>Request Your Free Estimate</h2>
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('This is a demo form!');">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="(555) 555-5555" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Needed</label>
+                    <input type="text" id="service" placeholder="e.g., Masonry, Landscaping" required>
+                </div>
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Deal Construction. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
