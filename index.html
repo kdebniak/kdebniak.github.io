@@ -5,276 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karolina Debniak | Portfolio</title>
     <style>
-        /* The Color Palette - Hues of Pastel Pink */
         :root {
-            --bg-color: #FFF5F7; 
-            --text-color: #3E2A2F; 
-            --pink-main: #FADADD; 
-            --pink-light: #FDF0F2; 
-            --pink-accent: #F4C2C2; 
-            --white: #FFFFFF;
+            --pink-dark: #3E2A2F;      /* Dark text color for readability */
+            --pink-main: #FADADD;      /* Classic pastel pink for header */
+            --pink-accent: #F4C2C2;    /* Slightly darker pink for buttons/borders */
+            --bg-light: #FFF5F7;       /* Very light pink background */
+            --white: #ffffff;
+            --muted-text: #8C7A7D;
         }
-
-        /* Basic Setup & Smooth Scrolling */
-        * {
-            box-sizing: border-box;
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth; 
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            color: var(--pink-dark);
+            background-color: var(--bg-light);
             line-height: 1.6;
         }
-
-        h1, h2, h3 {
-            color: #2D1A1E;
-            margin-bottom: 15px;
-        }
-
-        /* Sticky Navigation Bar */
-        nav {
-            background-color: var(--pink-main);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 15px 0;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #FFFFFF;
-        }
-
-        /* Layout Container */
-        .container {
-            width: 90%;
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        /* Hero Section */
         header {
             background-color: var(--pink-main);
-            text-align: center;
-            padding: 60px 20px;
             border-bottom: 5px solid var(--pink-accent);
+            padding: 3rem 10%;
+            text-align: left;
         }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover; 
-            border-radius: 50%; 
-            border: 5px solid var(--white);
-            box-shadow: 0 4px 15px rgba(244, 194, 194, 0.5);
-            margin-bottom: 20px;
-        }
-
-        header p {
-            max-width: 600px;
-            margin: 0 auto 25px auto;
-            font-size: 1.1em;
-        }
-
-        /* Buttons */
-        .button-group {
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
+            align-items: center;
+            gap: 2.5rem;
+        }
+        
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 15px rgba(244, 194, 194, 0.5);
         }
 
-        .btn {
+        .header-text {
+            flex: 1; 
+        }
+        h1 { margin: 0; font-size: 2.8rem; color: var(--pink-dark); }
+        .headline { font-size: 1.2rem; color: var(--pink-dark); font-weight: 600; margin-top: 0.5rem; }
+        
+        .main-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(244, 194, 194, 0.2);
+            margin-bottom: 2rem;
+        }
+        h2 { border-left: 4px solid var(--pink-accent); padding-left: 1rem; margin-top: 0; font-size: 1.5rem; color: var(--pink-dark); }
+        
+        .exp-item { margin-bottom: 1.5rem; }
+        .exp-title { font-weight: 700; color: var(--pink-dark); display: block; font-size: 1.1rem;}
+        .exp-meta { color: var(--muted-text); font-size: 0.9rem; margin-bottom: 0.5rem; display: block; font-style: italic;}
+        
+        ul { padding-left: 20px; margin-top: 5px; }
+        li { margin-bottom: 8px; }
+
+        .skill-tag {
+            display: inline-block;
+            background: #FDF0F2;
+            color: var(--pink-dark);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            margin: 0.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--pink-accent);
+        }
+        .contact-btn {
             display: inline-block;
             background-color: var(--white);
-            color: var(--text-color);
-            padding: 12px 28px;
+            color: var(--pink-dark);
+            padding: 0.8rem 1.5rem;
             text-decoration: none;
             border-radius: 25px;
-            font-weight: bold;
+            font-weight: 700;
+            margin-top: 1rem;
             transition: background-color 0.3s, transform 0.2s;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-
-        .btn:hover {
+        .contact-btn:hover {
             background-color: var(--pink-accent);
             transform: translateY(-2px);
-            color: var(--text-color);
         }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--white);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--white);
-        }
-
-        /* General Section Styling */
-        section {
-            background-color: var(--white);
-            padding: 40px;
-            margin: 40px 0;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(244, 194, 194, 0.2); 
-            scroll-margin-top: 80px; 
-        }
-
-        .leadership-section {
-            background-color: var(--pink-light);
-        }
-
-        h3 {
-            margin-top: 25px;
-            border-bottom: 2px solid var(--pink-main);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        li { margin-bottom: 10px; }
-
-        .contact-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .contact-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: bold;
-            border-bottom: 2px solid var(--pink-main);
-            transition: border-bottom-color 0.3s;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            font-size: 0.9em;
-            color: #8C7A7D;
-        }
-
-        @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-            .button-group {
-                flex-direction: column;
-                padding: 0 20px;
-            }
+        
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; text-align: center; }
+            .header-text { margin-bottom: 1.5rem; }
+            .main-container { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; }
+            .profile-photo { width: 140px; height: 140px; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#leadership">Leadership</a></li>
-            <li><a href="Boat Learner/index.html">Boat Learner App</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <header>
-        <img src="Assets/ProfilePic.JPG" alt="Karolina Debniak" class="profile-img">
-        <h1>Hi, I'm Karolina Debniak.</h1>
-        <p>An Accounting senior at Rutgers University combining analytical expertise in Audit & Assurance with a strong dedication to leadership, community service, and competitive sailing.</p>
+<header>
+    <div class="header-container">
+        <img src="headshot.png" alt="Karolina Debniak Headshot" class="profile-photo">
         
-        <div class="button-group">
-            <a href="Boat Learner/index.html" class="btn">Play Boat Learner Quiz</a>
-            <a href="Assets/Resume.pdf" class="btn btn-outline" target="_blank">Download Resume</a>
-        </div>
-    </header>
-
-    <div class="container">
-        
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am a senior at Rutgers University graduating in May 2026 with a major in Accounting and a minor in Slavic and Eastern European Studies, focusing on Polish and Russian. Since January 2024, I have worked in Audit and Assurance at WilkinGuttenplan, honing my analytical skills, attention to detail, and client service capabilities. Beyond the numbers, I am a dedicated leader and competitive sailor, having served as both President and Treasurer of the Rutgers Sailing Team. I thrive in dynamic environments that require discipline, teamwork, and a strong sense of community.</p>
-        </section>
-
-        <section id="experience">
-            <h2>Education & Professional Experience</h2>
-            
-            <h3>Education</h3>
-            <p><strong>Rutgers University</strong> | New Brunswick, NJ<br>
-            Bachelor of Science in Accounting (May 2026)<br>
-            <em>Minor: Slavic and Eastern European Studies (Coursework focus: Polish and Russian)</em></p>
-
-            <h3>Work Experience</h3>
-            <p><strong>WilkinGuttenplan</strong> | Audit and Assurance<br>
-            <em>January 2024 – Present</em></p>
-            <ul>
-                <li>Assisted with audits, reviews, and compilations for a diverse client base.</li>
-                <li>Proficient in CCH ProSystem fx Engagement and advanced Excel.</li>
-                <li>Successfully balanced a year-round professional accounting role with a rigorous academic course load and heavy extracurricular leadership commitments.</li>
-            </ul>
-        </section>
-
-        <section id="leadership" class="leadership-section">
-            <h2>Leadership & Community Engagement</h2>
-            
-            <h3>Competitive Sailing & Team Leadership</h3>
-            <ul>
-                <li><strong>Rutgers Sailing Team (4 Years):</strong> Served as President for one year and Treasurer for two years. Managed team finances, led peers, coordinated logistics, and successfully transitioned leadership to the incoming executive board.</li>
-                <li><strong>Technical Initiative:</strong> Developed the <a href="Boat Learner/index.html" style="color: var(--text-color); font-weight: bold; text-decoration: none; border-bottom: 2px solid var(--pink-accent);">Boat Learner Quiz App</a> to assist new team members in mastering maritime right-of-way rules and nautical terminology.</li>
-                <li><strong>Lake Hopatcong & Raritan Yacht Clubs:</strong> Actively race E-Scows and J/105s outside of collegiate sailing, demonstrating a lifelong commitment to the sport, tactical decision-making, and seamless teamwork.</li>
-            </ul>
-
-            <h3>Campus Involvement & Volunteer Work</h3>
-            <ul>
-                <li><strong>Rutgers Catholic:</strong> Active member dedicated to campus ministry, faith, and fostering a supportive student community.</li>
-                <li><strong>Animal Welfare Volunteer:</strong> Regularly walk dogs and support shelter operations at St. Hubert's Animal Shelter in Madison, NJ.</li>
-                <li><strong>Local New Brunswick Service:</strong> Dedicated time and energy to Unity Square Community Center and Elijah's Promise, supporting local enrichment and food equity initiatives in the Rutgers area.</li>
-            </ul>
-        </section>
-
-        <section id="contact">
-            <h2>Let's Connect</h2>
-            <p>I am always open to connecting with fellow accounting professionals, sailors, and Rutgers alumni!</p>
-            <ul class="contact-links">
-                <li>Email: <a href="mailto:debniakkarolina@gmail.com">debniakkarolina@gmail.com</a></li>
-                <li>LinkedIn: <a href="https://www.linkedin.com/in/karolina-debniak" target="_blank">linkedin.com/in/karolina-debniak</a></li>
-            </ul>
-        </section>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Karolina Debniak. Built for GitHub Pages.</p>
-    </footer>
-
-</body>
-</html>
+        <div class="header-text">
+            <h1>Karolina Debniak</h1>
+            <div class="headline">Accounting Major | Rutgers University | Audit & Assurance</div>
+            <p style="color: var(--pink-dark);">New Brunswick, NJ &bull; <a href="mailto:debniakkarolina@
