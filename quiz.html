@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boat Learner | Maritime Quiz</title>
+    <style>
+        :root {
+            --bg-color: #FFF5F7;
+            --card-bg: #FFFFFF;
+            --text-main: #3E2A2F;
+            --pink-main: #FADADD;
+            --pink-accent: #F4C2C2;
+            --correct-bg: #d4edda;
+            --correct-border: #28a745;
+            --correct-text: #155724;
+            --incorrect-bg: #f8d7da;
+            --incorrect-border: #dc3545;
+            --incorrect-text: #721c24;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        #app-container {
+            background-color: var(--card-bg);
+            width: 90%;
+            max-width: 700px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(244, 194, 194, 0.4);
+            overflow: hidden;
+            position: relative;
+            padding: 2.5rem 2rem 2rem 2rem;
+            border-top: 6px solid var(--pink-accent);
+        }
+        /* Progress Bar */
+        #progress-container {
+            width: 100%;
+            background-color: #f0f2f5;
+            height: 8px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #progress-bar {
+            height: 100%;
+            background-color: var(--pink-accent);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        /* Quiz Elements */
+        h1 { text-align: center; color: var(--text-main); margin-top: 0; }
+        #question-counter { text-align: center; font-size: 0.9rem; color: #888; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;}
+        #question-text { font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.5; font-weight: 600; text-align: center; }
+        
+        .option-btn {
+            display: block;
+            width: 100%;
+            background-color: #fff;
+            color: var(--text-main);
+            border: 2px solid #eef2f3;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+        }
+        .option-btn:hover { background-color: #fff9fa; border-color: var(--pink-main); transform: translateY(-2px); }
+        .option-btn:disabled { cursor: not-allowed; transform: none; }
+        
+        .correct-answer { background-color: var(--correct-bg) !important; border-color: var(--correct-border) !important; color: var(--correct-text) !important; }
+        .wrong-answer { background-color: var(--incorrect-bg) !important; border-color: var(--incorrect-border) !important; color: var(--incorrect-text) !important; }
+        
+        #next-btn, #retake-btn, #back-btn {
+            background-color: var(--text-main);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            display: none;
+            transition: background-color 0.2s;
+        }
+        #next-btn:hover, #retake-btn:hover, #back-btn:hover { background-color: #5a3d44; }
+        
+        #result-screen { display: none; text-align: center; }
+        #score-display { font-size: 4rem; font-weight: bold; color: var(--pink-accent); margin: 1rem 0; }
+        
+        .nav-link { color: #888; text-decoration: none; font-size: 0.9rem; display: block; text-align: center; margin-top: 2rem; font-weight: bold;}
+        .nav-link:hover { color: var(--pink-accent); }
+    </style>
+</head>
+<body>
+
+<div id="app-container">
+    <div id="progress-container"><div id="progress-bar"></div></div>
+    
+    <div id="quiz-screen">
+        <h1>Boat Learner Quiz</h1>
+        <div id="question-counter">Loading...</div>
+        <div id="question-text">Loading question data...</div>
+        <div id="options-container"></div>
+        <button id="next-btn" onclick="nextQuestion()">Next Question</button>
+    </div>
+
+    <div id="result-screen">
+        <h1>Final Score</h1>
+        <p>You completed the sailing session.</p>
+        <div id="score-display">0/0</div>
+        <p id="feedback-message" style="font-weight: bold; font-size: 1.1rem; margin-bottom: 20px;"></p>
+        <button id="retake-btn" onclick="location.reload()">Retake Quiz</button>
+        <button id="back-btn" onclick="window.location.href='index.html'" style="display:block; background-color:var(--pink-accent); color: var(--text-main);">Back to Portfolio</button>
+    </div>
+    
+    <a href="index.html" class="nav-link">&larr; Return to Karolina's Portfolio</a>
+</div>
+
+<script>
+    let quizData = [];
+    let currentIdx = 0;
+    let score = 0;
+    let answered = false;
+
+    const quizScreen = document.getElementById('quiz-screen');
+    const resultScreen = document.getElementById('result-screen');
+    const questionText = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const nextBtn = document.getElementById('next-btn');
+    const counter = document.getElementById('question-counter');
+    const progressBar = document.getElementById('progress-bar');
+    const scoreDisplay = document.getElementById('score-display');
+    const feedbackMessage = document.getElementById('feedback-message');
+
+    // Fetch questions from the external JSON file
+    async function loadQuizData() {
+        try {
+            const response = await fetch('questions.json');
+            quizData = await response.json();
+            init(); // Start the quiz once data is loaded
+        } catch (error) {
+            console.error("Error loading questions:", error);
+            questionText.innerText = "Failed to load questions. Note: Fetching JSON requires a local server (like Live Server).";
+        }
+    }
+
+    function init() {
+        if (quizData.length === 0) return;
+        answered = false;
+        const data = quizData[currentIdx];
+        
+        counter.innerText = `Question ${currentIdx + 1} of ${quizData.length}`;
+        questionText.innerText = data.q;
+        
+        // Update Progress Bar
+        const progressPercent = (currentIdx / quizData.length) * 100;
+        progressBar.style.width = `${progressPercent}%`;
+
+        optionsContainer.innerHTML = '';
+        
+        // Using 'data.a' array from the JSON snippet logic
+        data.a.forEach((opt, i) => {
+            const button = document.createElement('button');
+            button.className = 'option-btn';
+            button.innerText = opt;
+            button.onclick = () => { if(!answered) handleAns(i, button); };
+            optionsContainer.appendChild(button);
+        });
+        
+        nextBtn.style.display = 'none';
+    }
+
+    function handleAns(selectedIndex, btn) {
+        answered = true;
+        
+        // Using 'data.c' for correct index from the JSON snippet logic
+        const correct = quizData[currentIdx].c;
+        const buttons = document.querySelectorAll('.option-btn');
+        
+        // Disable all buttons
+        buttons.forEach(b => b.disabled = true);
+
+        if (selectedIndex === correct) {
+            btn.classList.add('correct-answer');
+            score++;
+        } else {
+            btn.classList.add('wrong-answer');
+            buttons[correct].classList.add('correct-answer');
+        }
+
+        nextBtn.style.display = 'block';
+        if (currentIdx === quizData.length - 1) {
+            nextBtn.innerText = 'See Final Score';
+        }
+    }
+
+    function nextQuestion() {
+        currentIdx++;
+        if (currentIdx < quizData.length) {
+            init();
+        } else {
+            finish();
+        }
+    }
+
+    function finish() {
+        quizScreen.style.display = 'none';
+        resultScreen.style.display = 'block';
+        progressBar.style.width = '100%';
+        
+        // Display raw score mapping the original snippet behavior
+        scoreDisplay.innerText = `${score} / ${quizData.length}`;
+        
+        // Threshold check adjusted to dynamically check if you scored well
+        let msg = score >= (quizData.length * 0.8) ? "Master Mariner! You're ready to set sail." : "Good effort! Review the rules and try again.";
+        feedbackMessage.innerText = msg;
+    }
+
+    // Start the process
+    loadQuizData();
+</script>
+
+</body>
+</html>
