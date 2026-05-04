@@ -1,319 +1,59 @@
-{
-  "exam_metadata": {
-    "discipline": "Sailing History & Design",
-    "version": "1.0_Maritime",
-    "total_questions": 10
+[
+  {
+    "q": "Which side of the vessel is the 'Starboard' side?",
+    "a": ["Left", "Right", "Front", "Back"],
+    "c": 1
   },
-  "questions": [
-    {
-      "id": "SAIL-MCQ-001",
-      "type": "MCQ",
-      "blueprint_area": "Keelboats & Sportboats",
-      "topic": "J/Boats Origins",
-      "skill_level": "Medium",
-      "prompt": "In 1977, Rod Johnstone built the very first J/24 in his garage, launching the legendary J/Boats brand. What was the name of this famous first hull?",
-      "options": [
-        {
-          "id": "A",
-          "text": "Windward",
-          "feedback": "\"Windward\" is a generic sailing term for the direction the wind is blowing from, not the name of the first J/24."
-        },
-        {
-          "id": "B",
-          "text": "Ragtime",
-          "feedback": "Spot on! Rod Johnstone built \"Ragtime\" in his Stonington, Connecticut garage. It dominated local racing, leading to the mass production of the J/24."
-        },
-        {
-          "id": "C",
-          "text": "Intrepid",
-          "feedback": "\"Intrepid\" was a famous 12-meter yacht that won the America's Cup twice, but it was not a J/Boat."
-        },
-        {
-          "id": "D",
-          "text": "Black Magic",
-          "feedback": "\"Black Magic\" (NZL 32) is the legendary boat that won the America's Cup for New Zealand in 1995, not a 24-foot garage build!"
-        }
-      ],
-      "correct_answer": "B"
-    },
-    {
-      "id": "SAIL-MCQ-002",
-      "type": "MCQ",
-      "blueprint_area": "Keelboats & Sportboats",
-      "topic": "J/105 Innovation",
-      "skill_level": "Medium",
-      "prompt": "Introduced in 1991, the J/105 revolutionized the sailing world. What major design innovation made the J/105 stand out from traditional keelboats of its time?",
-      "options": [
-        {
-          "id": "A",
-          "text": "It was the first production boat built entirely of carbon fiber.",
-          "feedback": "In 1991, carbon fiber was still far too expensive for mass-produced recreational keelboats; the J/105 hull is fiberglass."
-        },
-        {
-          "id": "B",
-          "text": "It featured a completely unstayed mast.",
-          "feedback": "The J/105 has a traditional stayed rig (with shrouds and stays). Unstayed masts are more common on boats like the Nonsuch."
-        },
-        {
-          "id": "C",
-          "text": "It was the first modern keelboat to feature a retractable bowsprit and an asymmetric spinnaker.",
-          "feedback": "Exactly! The J/105 changed the game by introducing the retractable bowsprit and asymmetric spinnaker to a production keelboat, making downwind sailing faster and easier with a smaller crew."
-        },
-        {
-          "id": "D",
-          "text": "It utilized a canting keel for offshore racing.",
-          "feedback": "Canting keels swing side-to-side and are used on extreme offshore racers like IMOCA 60s, whereas the J/105 has a standard fixed fin keel."
-        }
-      ],
-      "correct_answer": "C"
-    },
-    {
-      "id": "SAIL-MCQ-003",
-      "type": "MCQ",
-      "blueprint_area": "Scows & Inland Sailing",
-      "topic": "E-Scow History",
-      "skill_level": "Medium",
-      "prompt": "The E-Scow is a lightning-fast, flat-bottomed boat that has been raced on inland lakes for a century. Roughly when was the E-Scow officially recognized as a national class?",
-      "options": [
-        {
-          "id": "A",
-          "text": "1923",
-          "feedback": "Correct! The E-Scow has an incredible legacy and was recognized as a national class in 1923. Early versions were built of wood and heavily over-canvased."
-        },
-        {
-          "id": "B",
-          "text": "1945",
-          "feedback": "1945 is the year Melges Boat Works was founded (a major builder of scows), but the E-Scow class already existed before then."
-        },
-        {
-          "id": "C",
-          "text": "1968",
-          "feedback": "This date is much too late! The E-Scow is a true classic design with over 100 years of racing history."
-        },
-        {
-          "id": "D",
-          "text": "1981",
-          "feedback": "This date is much too late! The E-Scow is a true classic design with over 100 years of racing history."
-        }
-      ],
-      "correct_answer": "A"
-    },
-    {
-      "id": "SAIL-MCQ-004",
-      "type": "MCQ",
-      "blueprint_area": "Scows & Inland Sailing",
-      "topic": "Melges Legacy",
-      "skill_level": "Medium",
-      "prompt": "Melges Performance Sailboats has been a staple of high-performance racing for decades. Who originally founded the company in Zenda, Wisconsin?",
-      "options": [
-        {
-          "id": "A",
-          "text": "Buddy Melges",
-          "feedback": "Buddy Melges is Harry's son. Buddy became a sailing legend (winning Olympic medals and the America's Cup), but his father started the business."
-        },
-        {
-          "id": "B",
-          "text": "Johnstone Melges",
-          "feedback": "This is a trick answer combining the Johnstone family (J/Boats) with the Melges family!"
-        },
-        {
-          "id": "C",
-          "text": "Gary Jobson",
-          "feedback": "Gary Jobson is a famous American sailor, tactician, and sailing commentator, but he did not found Melges."
-        },
-        {
-          "id": "D",
-          "text": "Harry Melges Sr.",
-          "feedback": "That's right! Harry Melges Sr. founded Melges Boat Works in 1945, initially building wooden scows for the inland lakes."
-        }
-      ],
-      "correct_answer": "D"
-    },
-    {
-      "id": "SAIL-MCQ-005",
-      "type": "MCQ",
-      "blueprint_area": "Dinghies & Collegiate",
-      "topic": "Flying Junior Origins",
-      "skill_level": "Medium",
-      "prompt": "The International Flying Junior (FJ) was designed in 1955. What was the original purpose behind the creation of this popular double-handed boat?",
-      "options": [
-        {
-          "id": "A",
-          "text": "To serve as a training boat for the Olympic-class Flying Dutchman.",
-          "feedback": "Nailed it! It was designed as a smaller, more manageable trainer for the high-performance Flying Dutchman (FD), allowing younger or lighter crews to learn the ropes."
-        },
-        {
-          "id": "B",
-          "text": "To be the first single-handed skiff for youth sailors.",
-          "feedback": "The FJ is a double-handed boat (sailed by two people: a skipper and crew), not a single-handed skiff."
-        },
-        {
-          "id": "C",
-          "text": "To compete directly against the Laser in international regattas.",
-          "feedback": "The famous single-handed Laser wasn't designed until 1969, over a decade after the FJ hit the water."
-        },
-        {
-          "id": "D",
-          "text": "To be a heavy-weather rescue vessel for larger regattas.",
-          "feedback": "The FJ is a lightweight racing dinghy that can easily capsize; it would make a terrible heavy-weather rescue boat!"
-        }
-      ],
-      "correct_answer": "A"
-    },
-    {
-      "id": "SAIL-MCQ-006",
-      "type": "MCQ",
-      "blueprint_area": "Dinghies & Collegiate",
-      "topic": "420 Class",
-      "skill_level": "Medium",
-      "prompt": "The 420 sailboat is one of the most popular youth racing dinghies in the world. What does the \"420\" in its name refer to?",
-      "options": [
-        {
-          "id": "A",
-          "text": "The optimal combined crew weight in pounds.",
-          "feedback": "420 lbs would be much too heavy for this small dinghy! The optimal combined crew weight is usually closer to 260–300 lbs."
-        },
-        {
-          "id": "B",
-          "text": "The sail area in square feet.",
-          "feedback": "The sail area (main and jib combined) is roughly 110 square feet, which is much smaller than 420."
-        },
-        {
-          "id": "C",
-          "text": "The length of the boat in centimeters.",
-          "feedback": "Correct! Designed by Christian Maury in 1959, the boat is exactly 4.20 meters long (about 13 feet, 9 inches), giving the boat its name."
-        },
-        {
-          "id": "D",
-          "text": "The original class rule limiting fleets to 420 boats.",
-          "feedback": "There are tens of thousands of 420s sailing worldwide today; there was never a fleet limit."
-        }
-      ],
-      "correct_answer": "C"
-    },
-    {
-      "id": "SAIL-MCQ-007",
-      "type": "MCQ",
-      "blueprint_area": "Keelboats & Sportboats",
-      "topic": "J/105 Rules",
-      "skill_level": "Medium",
-      "prompt": "The J/105 class is known for its strict one-design rules that ensure fair, competitive racing. Which of the following is a fundamental rule for the class?",
-      "options": [
-        {
-          "id": "A",
-          "text": "Spinnakers must be symmetric and flown from a traditional pole.",
-          "feedback": "False! The J/105 is famous precisely because it uses an asymmetric spinnaker flown from a retractable bowsprit, not a symmetric pole."
-        },
-        {
-          "id": "B",
-          "text": "It is an owner-driver class with strict limits on professional sailors.",
-          "feedback": "Yes! The class enforces an \"owner-driver\" rule and limits the number of paid professionals onboard, ensuring it remains a highly competitive amateur (Corinthian) class."
-        },
-        {
-          "id": "C",
-          "text": "Crews are strictly limited to a maximum of 3 people.",
-          "feedback": "J/105s typically race with 5 or 6 people. There is a maximum crew weight limit, but not a strict 3-person limit."
-        },
-        {
-          "id": "D",
-          "text": "Hull modifications are permitted to optimize weight distribution.",
-          "feedback": "It is a strict one-design class. Modifying the hull shape or structure is highly illegal under class rules and will get a boat disqualified."
-        }
-      ],
-      "correct_answer": "B"
-    },
-    {
-      "id": "SAIL-MCQ-008",
-      "type": "MCQ",
-      "blueprint_area": "Keelboats & Sportboats",
-      "topic": "Melges 24 Design",
-      "skill_level": "Medium",
-      "prompt": "Introduced in 1993, the Melges 24 became a legendary high-performance sportboat capable of wild downwind speeds. Which prominent naval architecture firm designed it?",
-      "options": [
-        {
-          "id": "A",
-          "text": "Reichel/Pugh",
-          "feedback": "Exactly! The Melges 24 was designed by Reichel/Pugh (with heavy input from Buddy Melges). It was groundbreaking for its high-tech materials and ability to plane easily."
-        },
-        {
-          "id": "B",
-          "text": "Sparkman & Stephens",
-          "feedback": "Sparkman & Stephens (S&S) is legendary for classic ocean racers and older America's Cup 12-meters, but they didn't design this modern sportboat."
-        },
-        {
-          "id": "C",
-          "text": "Farr Yacht Design",
-          "feedback": "Farr Yacht Design is responsible for many amazing boats (like the Mumm 30 and Farr 40), but the Melges 24 belongs to Reichel/Pugh."
-        },
-        {
-          "id": "D",
-          "text": "Johnstone Designs",
-          "feedback": "The Johnstones are the designers behind J/Boats, which is the primary rival to Melges in the sportboat market."
-        }
-      ],
-      "correct_answer": "A"
-    },
-    {
-      "id": "SAIL-MCQ-009",
-      "type": "MCQ",
-      "blueprint_area": "Dinghies & Collegiate",
-      "topic": "Collegiate Fleets",
-      "skill_level": "Medium",
-      "prompt": "In United States collegiate sailing (ICSA), which two boat classes make up the vast majority of the fleet used for short-course fleet and team racing?",
-      "options": [
-        {
-          "id": "A",
-          "text": "Lasers and Optimists",
-          "feedback": "Lasers are used for college singlehanded nationals, but Optimists (Optis) are tiny prams meant for young children, not college athletes!"
-        },
-        {
-          "id": "B",
-          "text": "J/22s and Sonars",
-          "feedback": "J/22s and Sonars are used for collegiate match racing and keelboat events, but the standard weekend fleet racing is done in dinghies."
-        },
-        {
-          "id": "C",
-          "text": "Flying Juniors (FJs) and Club 420s",
-          "feedback": "Correct! The heavy-duty, un-trapezed versions of the Flying Junior (CFJ) and the Club 420 (C420) are the undisputed backbone of collegiate sailing due to their durability and tactical maneuverability."
-        },
-        {
-          "id": "D",
-          "text": "Melges 15s and RS Aeros",
-          "feedback": "The Melges 15 and RS Aero are modern, popular boats, but they have not replaced the traditional FJ and 420 in the collegiate ecosystem."
-        }
-      ],
-      "correct_answer": "C"
-    },
-    {
-      "id": "SAIL-MCQ-010",
-      "type": "MCQ",
-      "blueprint_area": "Scows & Inland Sailing",
-      "topic": "E-Scow Evolution",
-      "skill_level": "Medium",
-      "prompt": "The E-Scow class has evolved over its long history to stay relevant and fast. What major modernization was officially adopted by the class fleet in 2007?",
-      "options": [
-        {
-          "id": "A",
-          "text": "Switching from wooden hulls to fiberglass.",
-          "feedback": "The transition from wood to fiberglass hulls happened much earlier in the class's history (mostly in the 1970s)."
-        },
-        {
-          "id": "B",
-          "text": "Adopting a larger, asymmetric spinnaker flown from a bowsprit.",
-          "feedback": "Right! In 2007, the class voted to ditch the traditional symmetric spinnaker and pole, replacing it with a massive, easier-to-handle asymmetric spinnaker flown from a fixed bowsprit."
-        },
-        {
-          "id": "C",
-          "text": "Adding a double-trapeze system for the crew.",
-          "feedback": "E-Scows are hiked (crews lean over the side). Unlike the larger A-Scow, the E-Scow does not use a trapeze system."
-        },
-        {
-          "id": "D",
-          "text": "Implementing carbon fiber rigging.",
-          "feedback": "While carbon fiber is used on modern boats, the monumental 2007 class vote was specifically focused on changing the spinnaker configuration."
-        }
-      ],
-      "correct_answer": "B"
-    }
-  ]
-}
+  {
+    "q": "When two sailing vessels have the wind on different sides, which has right of way?",
+    "a": ["The vessel on the port tack", "The vessel on the starboard tack", "The larger vessel", "The one closer to the mark"],
+    "c": 1
+  },
+  {
+    "q": "What does a 'No Wake' buoy signify?",
+    "a": ["Speed limit of 20 knots", "Slowest speed possible to maintain steerage", "Sailing is prohibited", "No swimming allowed"],
+    "c": 1
+  },
+  {
+    "q": "Which knot is best for securing a boat to a piling or post?",
+    "a": ["Square Knot", "Clove Hitch", "Sheet Bend", "Figure Eight"],
+    "c": 1
+  },
+  {
+    "q": "What color is a Starboard buoy when returning from sea (in the Americas)?",
+    "a": ["Green", "Black", "Red", "White"],
+    "c": 2
+  },
+  {
+    "q": "If you are on a sailboat and a large ship is restricted in its ability to maneuver in a narrow channel, who has right of way?",
+    "a": ["The sailboat", "The ship", "Whichever is faster", "The one on the starboard tack"],
+    "c": 1
+  },
+  {
+    "q": "In 'Rules of the Road', a vessel being overtaken is the:",
+    "a": ["Give-way vessel", "Stand-on vessel", "Underway vessel", "Draft vessel"],
+    "c": 1
+  },
+  {
+    "q": "What is 'The Boom' on a sailboat?",
+    "a": ["The loud noise of a wave", "The horizontal pole at the bottom of the mainsail", "The vertical pole holding the sail", "The anchor chain"],
+    "c": 1
+  },
+  {
+    "q": "What is a 'Tack' in sailing?",
+    "a": ["Turning the bow through the wind", "Turning the stern through the wind", "Dropping the anchor", "Cleaning the hull"],
+    "c": 0
+  },
+  {
+    "q": "When is a life jacket (PFD) required to be worn?",
+    "a": ["Only during races", "Only at night", "As per state law and vessel requirements", "Only when the boat is sinking"],
+    "c": 2
+  },
+  {
+    "q": "What does 'Leeward' mean?",
+    "a": ["The side facing the wind", "The side away from the wind", "The front of the boat", "The back of the boat"],
+    "c": 1
+  },
+  {
+    "q": "What does the phrase 'Red Right Returning' help you remember?",
+    "a": ["Keep red buoys on your right when returning
