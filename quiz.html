@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boat Learner | Maritime Quiz</title>
+    <title>Accounting II Final Prep</title>
     <style>
         :root {
-            --bg-color: #FFF5F7;
-            --card-bg: #FFFFFF;
-            --text-main: #3E2A2F;
-            --pink-main: #FADADD;
-            --pink-accent: #F4C2C2;
-            --correct-bg: #d4edda;
-            --correct-border: #28a745;
-            --correct-text: #155724;
-            --incorrect-bg: #f8d7da;
-            --incorrect-border: #dc3545;
-            --incorrect-text: #721c24;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --accent-red: #cc0033; /* Rutgers Red */
+            --accent-hover: #e60039;
+            --correct: #2e7d32;
+            --incorrect: #c62828;
         }
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -32,17 +28,16 @@
             background-color: var(--card-bg);
             width: 90%;
             max-width: 700px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(244, 194, 194, 0.4);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             overflow: hidden;
             position: relative;
-            padding: 2.5rem 2rem 2rem 2rem;
-            border-top: 6px solid var(--pink-accent);
+            padding: 2rem;
         }
         /* Progress Bar */
         #progress-container {
             width: 100%;
-            background-color: #f0f2f5;
+            background-color: #333;
             height: 8px;
             position: absolute;
             top: 0;
@@ -50,57 +45,55 @@
         }
         #progress-bar {
             height: 100%;
-            background-color: var(--pink-accent);
+            background-color: var(--accent-red);
             width: 0%;
             transition: width 0.3s ease;
         }
         /* Quiz Elements */
-        h1 { text-align: center; color: var(--text-main); margin-top: 0; }
-        #question-counter { text-align: center; font-size: 0.9rem; color: #888; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: bold;}
-        #question-text { font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.5; font-weight: 600; text-align: center; }
+        h1 { text-align: center; color: var(--accent-red); margin-top: 0; }
+        #question-counter { text-align: center; font-size: 0.9rem; color: #888; margin-bottom: 1.5rem; }
+        #question-text { font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.5; font-weight: 500; }
         
         .option-btn {
             display: block;
             width: 100%;
-            background-color: #fff;
+            background-color: #2d2d2d;
             color: var(--text-main);
-            border: 2px solid #eef2f3;
+            border: 1px solid #444;
             padding: 1rem;
             margin-bottom: 1rem;
-            border-radius: 12px;
+            border-radius: 8px;
             font-size: 1rem;
-            font-weight: 500;
             cursor: pointer;
             text-align: left;
             transition: all 0.2s;
         }
-        .option-btn:hover { background-color: #fff9fa; border-color: var(--pink-main); transform: translateY(-2px); }
-        .option-btn:disabled { cursor: not-allowed; transform: none; }
+        .option-btn:hover { background-color: #3d3d3d; border-color: #666; }
+        .option-btn:disabled { cursor: not-allowed; }
         
-        .correct-answer { background-color: var(--correct-bg) !important; border-color: var(--correct-border) !important; color: var(--correct-text) !important; }
-        .wrong-answer { background-color: var(--incorrect-bg) !important; border-color: var(--incorrect-border) !important; color: var(--incorrect-text) !important; }
+        .correct-answer { background-color: var(--correct) !important; border-color: var(--correct) !important; }
+        .wrong-answer { background-color: var(--incorrect) !important; border-color: var(--incorrect) !important; }
         
         #next-btn, #retake-btn, #back-btn {
-            background-color: var(--text-main);
+            background-color: var(--accent-red);
             color: white;
             border: none;
             padding: 1rem 2rem;
-            border-radius: 50px;
+            border-radius: 8px;
             font-size: 1rem;
             font-weight: bold;
             cursor: pointer;
             width: 100%;
             margin-top: 1rem;
             display: none;
-            transition: background-color 0.2s;
         }
-        #next-btn:hover, #retake-btn:hover, #back-btn:hover { background-color: #5a3d44; }
+        #next-btn:hover, #retake-btn:hover, #back-btn:hover { background-color: var(--accent-hover); }
         
         #result-screen { display: none; text-align: center; }
-        #score-display { font-size: 4rem; font-weight: bold; color: var(--pink-accent); margin: 1rem 0; }
+        #score-display { font-size: 4rem; font-weight: bold; color: var(--accent-red); margin: 1rem 0; }
         
-        .nav-link { color: #888; text-decoration: none; font-size: 0.9rem; display: block; text-align: center; margin-top: 2rem; font-weight: bold;}
-        .nav-link:hover { color: var(--pink-accent); }
+        .nav-link { color: #888; text-decoration: none; font-size: 0.9rem; display: block; text-align: center; margin-top: 2rem; }
+        .nav-link:hover { color: white; }
     </style>
 </head>
 <body>
@@ -109,28 +102,55 @@
     <div id="progress-container"><div id="progress-bar"></div></div>
     
     <div id="quiz-screen">
-        <h1>Boat Learner Quiz</h1>
-        <div id="question-counter">Loading...</div>
-        <div id="question-text">Loading question data...</div>
+        <h1>Int. Accounting II Prep</h1>
+        <div id="question-counter">Question 1 of 25</div>
+        <div id="question-text">Loading question...</div>
         <div id="options-container"></div>
         <button id="next-btn" onclick="nextQuestion()">Next Question</button>
     </div>
 
     <div id="result-screen">
         <h1>Final Score</h1>
-        <p>You completed the sailing session.</p>
-        <div id="score-display">0/0</div>
-        <p id="feedback-message" style="font-weight: bold; font-size: 1.1rem; margin-bottom: 20px;"></p>
-        <button id="retake-btn" onclick="location.reload()">Retake Quiz</button>
-        <button id="back-btn" onclick="window.location.href='index.html'" style="display:block; background-color:var(--pink-accent); color: var(--text-main);">Back to Portfolio</button>
+        <p>You completed the study session.</p>
+        <div id="score-display">0%</div>
+        <p id="feedback-message"></p>
+        <button id="retake-btn" onclick="startQuiz()">Retake Quiz</button>
+        <button id="back-btn" onclick="window.location.href='index.html'" style="display:block; background-color:#333;">Back to Portfolio</button>
     </div>
     
-    <a href="index.html" class="nav-link">&larr; Return to Karolina's Portfolio</a>
+    <a href="index.html" class="nav-link">&larr; Return to Brendan's Portfolio</a>
 </div>
 
 <script>
-    let quizData = [];
-    let currentIdx = 0;
+    const questions = [
+        { q: "Which of the following is classified as a Held-to-Maturity (HTM) security?", options: ["Debt securities bought to sell in the near term", "Equity securities with no significant influence", "Debt securities the company has the positive intent and ability to hold to maturity", "Any debt security purchased"], answer: 2 },
+        { q: "Unrealized holding gains and losses on Available-for-Sale (AFS) debt securities are reported in:", options: ["Net Income", "Other Comprehensive Income (OCI)", "Retained Earnings directly", "Operating Cash Flows"], answer: 1 },
+        { q: "Under the equity method, how does the investor record the receipt of a dividend from the investee?", options: ["As dividend revenue", "As an increase to the investment account", "As a decrease to the investment account", "It is not recorded"], answer: 2 },
+        { q: "When a bond is issued at a discount, the carrying value of the bond over its life will:", options: ["Decrease", "Increase", "Remain constant", "Fluctuate with market rates"], answer: 1 },
+        { q: "Using the effective-interest method, interest expense is calculated by multiplying the:", options: ["Face value by the stated rate", "Carrying value by the stated rate", "Face value by the market rate", "Carrying value by the market rate (yield) at issuance"], answer: 3 },
+        { q: "For a lessee, which criterion triggers finance lease classification?", options: ["Lease term is 50% of asset's life", "Present value of lease payments equals 75% of fair value", "The lease transfers ownership of the property to the lessee by the end of the lease term", "The asset has alternative uses to the lessor"], answer: 2 },
+        { q: "In an operating lease for a lessee, how is lease expense recognized?", options: ["Front-loaded like a loan", "Straight-line basis over the lease term", "Based on usage", "Only at the end of the lease"], answer: 1 },
+        { q: "A deferred tax liability represents the:", options: ["Increase in taxes payable in future years due to temporary differences", "Decrease in taxes payable in future years", "Taxes currently owed to the IRS", "Permanent differences between book and tax"], answer: 0 },
+        { q: "If tax depreciation exceeds book depreciation in the first year of an asset's life, it creates a:", options: ["Deferred Tax Asset", "Deferred Tax Liability", "Permanent Difference", "Net Operating Loss"], answer: 1 },
+        { q: "In a defined benefit pension plan, the Projected Benefit Obligation (PBO) bases its calculation on:", options: ["Current salaries only", "Vested benefits only", "Future salary levels", "Contributions made to the plan"], answer: 2 },
+        { q: "Which of the following increases pension expense?", options: ["Actual return on plan assets", "Amortization of prior service cost", "Employer contributions", "Gains in acturial assumptions"], answer: 1 },
+        { q: "When Treasury Stock is purchased under the cost method, the Treasury Stock account is:", options: ["Credited for par value", "Debited for par value", "Debited for the purchase price", "Credited for the purchase price"], answer: 2 },
+        { q: "At the date of declaration of a large stock dividend, what amount is transferred from Retained Earnings to Paid-In Capital?", options: ["Market value of the shares", "Par value of the shares", "Book value of the shares", "Zero"], answer: 1 },
+        { q: "A 2-for-1 stock split will:", options: ["Double the total par value of stock outstanding", "Cut the par value per share in half", "Decrease total Retained Earnings", "Increase total Stockholders' Equity"], answer: 1 },
+        { q: "In calculating basic Earnings Per Share (EPS), preferred dividends are:", options: ["Added to Net Income", "Subtracted from Net Income", "Ignored", "Subtracted from weighted average shares"], answer: 1 },
+        { q: "Convertible bonds are considered 'anti-dilutive' if including them in the EPS calculation causes EPS to:", options: ["Decrease", "Increase", "Remain exactly the same", "Turn negative"], answer: 1 },
+        { q: "A change in accounting principle (e.g., LIFO to FIFO) generally requires:", options: ["Prospective application", "Retrospective application", "No adjustment", "Only note disclosure"], answer: 1 },
+        { q: "A change in the estimated useful life of a machine requires:", options: ["Retrospective application", "A prior period adjustment", "Prospective application", "Filing an amended tax return"], answer: 2 },
+        { q: "The correction of an error in the financial statements of a prior period should be reported as an adjustment to the opening balance of:", options: ["Net Income", "Other Comprehensive Income", "Retained Earnings", "Additional Paid-In Capital"], answer: 2 },
+        { q: "On a Statement of Cash Flows (indirect method), depreciation expense is:", options: ["Subtracted from Net Income", "Added to Net Income", "Classified as an investing activity", "Ignored"], answer: 1 },
+        { q: "The payment of dividends to shareholders is classified as what type of cash flow?", options: ["Operating", "Investing", "Financing", "Non-cash"], answer: 2 },
+        { q: "Revenue from a contract is recognized over time if:", options: ["The customer simultaneously receives and consumes the benefits of the seller's performance", "The seller has a right to payment", "Legal title has transferred", "The contract is longer than one year"], answer: 0 },
+        { q: "An assurance-type warranty is generally accounted for by:", options: ["Expensing costs as incurred", "Accruing a liability in the period of sale", "Recognizing revenue over the warranty period", "Ignoring it until a claim is filed"], answer: 1 },
+        { q: "A contingent liability should be accrued (journalized) if the loss is:", options: ["Possible and estimable", "Probable and not estimable", "Probable and reasonably estimable", "Remote"], answer: 2 },
+        { q: "Under IFRS, unlike US GAAP, development costs can be capitalized if:", options: ["They are incurred before technological feasibility", "They meet specific economic viability criteria", "They are related to basic research", "IFRS never allows capitalization of development"], answer: 1 }
+    ];
+
+    let currentQuestionIndex = 0;
     let score = 0;
     let answered = false;
 
@@ -144,92 +164,84 @@
     const scoreDisplay = document.getElementById('score-display');
     const feedbackMessage = document.getElementById('feedback-message');
 
-    // Fetch questions from the external JSON file
-    async function loadQuizData() {
-        try {
-            const response = await fetch('questions.json');
-            quizData = await response.json();
-            init(); // Start the quiz once data is loaded
-        } catch (error) {
-            console.error("Error loading questions:", error);
-            questionText.innerText = "Failed to load questions. Note: Fetching JSON requires a local server (like Live Server).";
-        }
+    function startQuiz() {
+        currentQuestionIndex = 0;
+        score = 0;
+        quizScreen.style.display = 'block';
+        resultScreen.style.display = 'none';
+        loadQuestion();
     }
 
-    function init() {
-        if (quizData.length === 0) return;
+    function loadQuestion() {
         answered = false;
-        const data = quizData[currentIdx];
+        nextBtn.style.display = 'none';
+        const currentQ = questions[currentQuestionIndex];
         
-        counter.innerText = `Question ${currentIdx + 1} of ${quizData.length}`;
-        questionText.innerText = data.q;
+        counter.innerText = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+        questionText.innerText = currentQ.q;
         
         // Update Progress Bar
-        const progressPercent = (currentIdx / quizData.length) * 100;
+        const progressPercent = ((currentQuestionIndex) / questions.length) * 100;
         progressBar.style.width = `${progressPercent}%`;
 
         optionsContainer.innerHTML = '';
-        
-        // Using 'data.a' array from the JSON snippet logic
-        data.a.forEach((opt, i) => {
+        currentQ.options.forEach((option, index) => {
             const button = document.createElement('button');
             button.className = 'option-btn';
-            button.innerText = opt;
-            button.onclick = () => { if(!answered) handleAns(i, button); };
+            button.innerText = option;
+            button.onclick = () => selectOption(index, button);
             optionsContainer.appendChild(button);
         });
-        
-        nextBtn.style.display = 'none';
     }
 
-    function handleAns(selectedIndex, btn) {
+    function selectOption(selectedIndex, btn) {
+        if (answered) return;
         answered = true;
         
-        // Using 'data.c' for correct index from the JSON snippet logic
-        const correct = quizData[currentIdx].c;
+        const currentQ = questions[currentQuestionIndex];
         const buttons = document.querySelectorAll('.option-btn');
         
         // Disable all buttons
         buttons.forEach(b => b.disabled = true);
 
-        if (selectedIndex === correct) {
+        if (selectedIndex === currentQ.answer) {
             btn.classList.add('correct-answer');
             score++;
         } else {
             btn.classList.add('wrong-answer');
-            buttons[correct].classList.add('correct-answer');
+            buttons[currentQ.answer].classList.add('correct-answer');
         }
 
         nextBtn.style.display = 'block';
-        if (currentIdx === quizData.length - 1) {
+        if (currentQuestionIndex === questions.length - 1) {
             nextBtn.innerText = 'See Final Score';
         }
     }
 
     function nextQuestion() {
-        currentIdx++;
-        if (currentIdx < quizData.length) {
-            init();
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            loadQuestion();
         } else {
-            finish();
+            showResults();
         }
     }
 
-    function finish() {
+    function showResults() {
         quizScreen.style.display = 'none';
         resultScreen.style.display = 'block';
         progressBar.style.width = '100%';
         
-        // Display raw score mapping the original snippet behavior
-        scoreDisplay.innerText = `${score} / ${quizData.length}`;
+        const percentage = Math.round((score / questions.length) * 100);
+        scoreDisplay.innerText = `${percentage}%`;
         
-        // Threshold check adjusted to dynamically check if you scored well
-        let msg = score >= (quizData.length * 0.8) ? "Master Mariner! You're ready to set sail." : "Good effort! Review the rules and try again.";
-        feedbackMessage.innerText = msg;
+        if(percentage >= 90) feedbackMessage.innerText = "CPA Ready! Incredible job.";
+        else if(percentage >= 75) feedbackMessage.innerText = "Solid understanding. Keep reviewing those tricky areas!";
+        else feedbackMessage.innerText = "Looks like you need to hit the books a bit more before finals.";
     }
 
-    // Start the process
-    loadQuizData();
+    // Start the app
+    startQuiz();
 </script>
 
 </body>
