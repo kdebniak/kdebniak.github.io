@@ -6,16 +6,17 @@
     <title>Sailing Final Prep</title>
     <style>
         :root {
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --text-main: #e0e0e0;
-            --accent-red: #cc0033; /* Rutgers Red */
-            --accent-hover: #e60039;
-            --correct: #2e7d32;
-            --incorrect: #c62828;
+            --bg-color: #e0f2fe; /* Light water blue */
+            --card-bg: #ffffff; /* Clean white for cards */
+            --text-main: #2d3748; /* Charcoal from portfolio */
+            --accent-pink: #e83e8c; /* Primary vivid pink */
+            --hover-pink: #d81b60; /* Darker pink for hovers */
+            --ocean-blue: #0284c7; /* Deeper blue for headings/water theme */
+            --correct: #10b981; /* Green for correct */
+            --incorrect: #ef4444; /* Red for incorrect */
         }
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
@@ -29,15 +30,16 @@
             width: 90%;
             max-width: 700px;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(2, 132, 199, 0.15); /* Soft blue shadow */
             overflow: hidden;
             position: relative;
             padding: 2rem;
+            border: 2px solid #bae6fd;
         }
         /* Progress Bar */
         #progress-container {
             width: 100%;
-            background-color: #333;
+            background-color: #f1f5f9;
             height: 8px;
             position: absolute;
             top: 0;
@@ -45,37 +47,86 @@
         }
         #progress-bar {
             height: 100%;
-            background-color: var(--accent-red);
+            background-color: var(--accent-pink);
             width: 0%;
             transition: width 0.3s ease;
         }
         /* Quiz Elements */
-        h1 { text-align: center; color: var(--accent-red); margin-top: 0; }
-        #question-counter { text-align: center; font-size: 0.9rem; color: #888; margin-bottom: 1.5rem; }
-        #question-text { font-size: 1.2rem; margin-bottom: 2rem; line-height: 1.5; font-weight: 500; }
+        h1 { 
+            text-align: center; 
+            color: var(--ocean-blue); 
+            margin-top: 0; 
+            font-size: 2.2rem;
+        }
+        
+        .header-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px dashed #bae6fd;
+        }
+
+        #question-counter { 
+            font-size: 1rem; 
+            color: #64748b; 
+            font-weight: 600;
+        }
+
+        #score-tracker {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--accent-pink);
+            background: #fdf2f8;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid #fbcfe8;
+        }
+
+        #question-text { 
+            font-size: 1.25rem; 
+            margin-bottom: 2rem; 
+            line-height: 1.5; 
+            font-weight: 600; 
+            color: var(--text-main);
+        }
         
         .option-btn {
             display: block;
             width: 100%;
-            background-color: #2d2d2d;
+            background-color: #f8fafc;
             color: var(--text-main);
-            border: 1px solid #444;
+            border: 2px solid #e2e8f0;
             padding: 1rem;
             margin-bottom: 1rem;
             border-radius: 8px;
             font-size: 1rem;
+            font-weight: 500;
             cursor: pointer;
             text-align: left;
             transition: all 0.2s;
         }
-        .option-btn:hover { background-color: #3d3d3d; border-color: #666; }
+        .option-btn:hover { 
+            background-color: #fdf2f8; 
+            border-color: var(--accent-pink); 
+            color: var(--dark-pink);
+        }
         .option-btn:disabled { cursor: not-allowed; }
         
-        .correct-answer { background-color: var(--correct) !important; border-color: var(--correct) !important; }
-        .wrong-answer { background-color: var(--incorrect) !important; border-color: var(--incorrect) !important; }
+        .correct-answer { 
+            background-color: var(--correct) !important; 
+            border-color: var(--correct) !important; 
+            color: white !important;
+        }
+        .wrong-answer { 
+            background-color: var(--incorrect) !important; 
+            border-color: var(--incorrect) !important; 
+            color: white !important;
+        }
         
         #next-btn, #retake-btn, #back-btn {
-            background-color: var(--accent-red);
+            background-color: var(--accent-pink);
             color: white;
             border: none;
             padding: 1rem 2rem;
@@ -86,14 +137,26 @@
             width: 100%;
             margin-top: 1rem;
             display: none;
+            transition: background-color 0.2s;
         }
-        #next-btn:hover, #retake-btn:hover, #back-btn:hover { background-color: var(--accent-hover); }
+        #next-btn:hover, #retake-btn:hover { background-color: var(--hover-pink); }
+        
+        #back-btn { background-color: var(--ocean-blue); }
+        #back-btn:hover { background-color: #0369a1; }
         
         #result-screen { display: none; text-align: center; }
-        #score-display { font-size: 4rem; font-weight: bold; color: var(--accent-red); margin: 1rem 0; }
+        #score-display { font-size: 4rem; font-weight: bold; color: var(--accent-pink); margin: 1rem 0; }
         
-        .nav-link { color: #888; text-decoration: none; font-size: 0.9rem; display: block; text-align: center; margin-top: 2rem; }
-        .nav-link:hover { color: white; }
+        .nav-link { 
+            color: var(--ocean-blue); 
+            text-decoration: none; 
+            font-size: 0.95rem; 
+            display: block; 
+            text-align: center; 
+            margin-top: 2rem; 
+            font-weight: 600;
+        }
+        .nav-link:hover { color: var(--accent-pink); }
     </style>
 </head>
 <body>
@@ -103,7 +166,10 @@
     
     <div id="quiz-screen">
         <h1>Sailing Final Prep</h1>
-        <div id="question-counter">Question 1 of 25</div>
+        <div class="header-info">
+            <div id="question-counter">Question 1 of 25</div>
+            <div id="score-tracker">Points: <span id="current-score">0</span></div>
+        </div>
         <div id="question-text">Loading question...</div>
         <div id="options-container"></div>
         <button id="next-btn" onclick="nextQuestion()">Next Question</button>
@@ -115,7 +181,7 @@
         <div id="score-display">0%</div>
         <p id="feedback-message"></p>
         <button id="retake-btn" onclick="startQuiz()">Retake Quiz</button>
-        <button id="back-btn" onclick="window.location.href='index.html'" style="display:block; background-color:#333;">Back to Portfolio</button>
+        <button id="back-btn" onclick="window.location.href='index.html'" style="display:block;">Back to Portfolio</button>
     </div>
     
     <a href="index.html" class="nav-link">&larr; Return to Portfolio</a>
@@ -163,10 +229,12 @@
     const progressBar = document.getElementById('progress-bar');
     const scoreDisplay = document.getElementById('score-display');
     const feedbackMessage = document.getElementById('feedback-message');
+    const currentScoreDisplay = document.getElementById('current-score');
 
     function startQuiz() {
         currentQuestionIndex = 0;
         score = 0;
+        currentScoreDisplay.innerText = score;
         quizScreen.style.display = 'block';
         resultScreen.style.display = 'none';
         loadQuestion();
@@ -207,6 +275,7 @@
         if (selectedIndex === currentQ.answer) {
             btn.classList.add('correct-answer');
             score++;
+            currentScoreDisplay.innerText = score; // Update the live counter
         } else {
             btn.classList.add('wrong-answer');
             buttons[currentQ.answer].classList.add('correct-answer');
