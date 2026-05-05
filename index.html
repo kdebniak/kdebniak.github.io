@@ -4,113 +4,312 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karolina Debniak | Rutgers Business School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-pink: #e83e8c;
+            --hot-pink: #ff1694;
             --dark-pink: #9d174d;
+            --soft-pink: #fbcfe8;
             --charcoal: #2d3748;
-            --bg-light: #fdf2f8;
+            --text-main: #1a202c;
+            /* Glassmorphism background */
+            --bg-gradient: linear-gradient(135deg, #fdf2f8 0%, #fae8f0 100%);
+            --card-glass: rgba(255, 255, 255, 0.6);
+            --border-glass: rgba(255, 255, 255, 0.3);
         }
+
+        /* Basic Reset & Animation Keyframes */
+        * { box-sizing: border-box; }
+        
+        @keyframes fadeInSlideUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0px rgba(232, 62, 140, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(232, 62, 140, 0); }
+            100% { box-shadow: 0 0 0 0px rgba(232, 62, 140, 0); }
+        }
+
+        @keyframes jiggle {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.05) rotate(1deg); }
+            50% { transform: scale(1.05) rotate(-1deg); }
+            100% { transform: scale(1); }
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            color: var(--charcoal);
-            background-color: var(--bg-light);
+            color: var(--text-main);
+            background: var(--bg-gradient);
+            background-attachment: fixed;
             line-height: 1.6;
+            overflow-x: hidden;
         }
+
+        /* Fun, Animated Header */
         header {
-            background-color: #ffffff;
-            border-bottom: 4px solid var(--primary-pink);
-            padding: 3rem 10%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 2rem 10%;
             text-align: left;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: padding 0.3s;
         }
+
         .header-container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 2.5rem;
+            animation: fadeInSlideUp 0.8s ease-out;
         }
         
         .profile-photo {
-            width: 150px;
-            height: 150px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #fff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            animation: pulseGlow 2s infinite;
+            transition: transform 0.3s;
+        }
+        
+        .profile-photo:hover {
+            transform: scale(1.05) rotate(3deg);
         }
 
-        .header-text {
-            flex: 1; 
-        }
-        h1 { margin: 0; font-size: 2.8rem; color: #1a202c; }
-        .headline { font-size: 1.2rem; color: var(--primary-pink); font-weight: 600; margin-top: 0.5rem; }
+        .header-text { flex: 1; }
         
+        h1 { 
+            font-family: 'Poppins', sans-serif;
+            margin: 0; 
+            font-size: 2.5rem; 
+            font-weight: 700;
+            background: linear-gradient(to right, var(--charcoal), var(--primary-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .headline { 
+            font-size: 1.1rem; 
+            color: var(--dark-pink); 
+            font-weight: 600; 
+            margin-top: 0.3rem;
+            letter-spacing: 0.5px;
+        }
+        
+        header p { margin: 0.5rem 0; font-size: 0.95rem; }
+
+        /* Main Container & Modern Grid */
         .main-container {
-            max-width: 1000px;
-            margin: 3rem auto;
+            max-width: 1100px;
+            margin: 2rem auto 4rem auto;
             padding: 0 1.5rem;
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1.8fr 1.2fr;
             gap: 2rem;
-        }
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
-        }
-        h2 { border-left: 4px solid var(--primary-pink); padding-left: 1rem; margin-top: 0; font-size: 1.5rem; }
-        
-        .exp-item { margin-bottom: 1.5rem; }
-        .exp-title { font-weight: 700; color: #1a202c; display: block; }
-        .exp-meta { color: #718096; font-size: 0.9rem; margin-bottom: 0.5rem; display: block; font-style: italic;}
-        ul { padding-left: 20px; margin-top: 5px; margin-bottom: 0; }
-        li { margin-bottom: 5px; }
-        
-        .company-header {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--primary-pink);
-            margin-bottom: 1rem;
-            border-bottom: 2px solid var(--bg-light);
-            padding-bottom: 0.5rem;
+            animation: fadeInSlideUp 1s ease-out 0.2s both;
         }
 
+        /* Cool Glass Cards with Hover Effects */
+        .card {
+            background: var(--card-glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-glass);
+            box-shadow: 0 8px 32px rgba(232, 62, 140, 0.05);
+            margin-bottom: 2rem;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s, background 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle background flare on cards */
+        .card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(251,207,232,0.2) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            pointer-events: none;
+            transition: opacity 0.5s;
+            opacity: 0.5;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 15px 45px rgba(232, 62, 140, 0.12);
+            background: rgba(255, 255, 255, 0.75);
+        }
+        
+        .card:hover::after { opacity: 1; }
+
+        h2 { 
+            font-family: 'Poppins', sans-serif;
+            margin-top: 0; 
+            font-size: 1.6rem; 
+            color: var(--charcoal);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-pink), transparent);
+            border-radius: 2px;
+        }
+        
+        /* Progressive Experience Styling */
+        .exp-item { 
+            margin-bottom: 1.8rem; 
+            padding-left: 1rem; 
+            border-left: 2px solid var(--soft-pink);
+            transition: border-color 0.3s;
+        }
+        
+        .exp-item:hover { border-color: var(--primary-pink); }
+        
+        .exp-title { font-weight: 700; color: var(--text-main); display: block; font-size: 1.05rem; }
+        .exp-meta { color: var(--dark-pink); font-size: 0.9rem; margin-bottom: 0.5rem; display: block; font-weight: 500; }
+        
+        ul { padding-left: 1.2rem; margin-top: 5px; margin-bottom: 0; }
+        li { margin-bottom: 6px; font-size: 0.95rem; }
+        
+        .company-header {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark-pink);
+            margin-bottom: 1.2rem;
+            background: linear-gradient(45deg, var(--dark-pink), var(--primary-pink));
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            color: white;
+            display: inline-block;
+        }
+
+        /* Fun Skill Tags */
         .skill-tag {
             display: inline-block;
-            background: #fbcfe8;
-            color: #831843;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            margin: 0.2rem;
+            background: white;
+            color: var(--dark-pink);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin: 0.3rem;
             font-size: 0.85rem;
             font-weight: 600;
+            border: 1px solid var(--soft-pink);
+            transition: all 0.3s;
+            cursor: default;
         }
+        
+        .skill-tag:hover {
+            background: var(--primary-pink);
+            color: white;
+            border-color: var(--primary-pink);
+            animation: jiggle 0.5s ease;
+        }
+
+        /* Animated Buttons */
         .contact-btn {
             display: inline-block;
             background-color: var(--primary-pink);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 0.8rem 1.8rem;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 50px;
             font-weight: 700;
+            font-size: 0.9rem;
             margin-top: 1rem;
-            transition: background-color 0.2s;
-        }
-        .contact-btn:hover {
-            background-color: var(--dark-pink);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(232, 62, 140, 0.3);
+            border: none;
+            cursor: pointer;
         }
         
-        @media (max-width: 768px) {
-            .header-container { flex-direction: column; text-align: center; }
-            .header-text { margin-bottom: 1.5rem; }
-            .main-container { grid-template-columns: 1fr; }
+        .contact-btn:hover {
+            background-color: var(--hot-pink);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(232, 62, 140, 0.5);
+        }
+
+        /* Special Styling for Interactive Project Card */
+        .project-card {
+            background: linear-gradient(135deg, var(--dark-pink) 0%, #7c113e 100%) !important;
+            color: white !important;
+            border: none !important;
+        }
+        
+        .project-card h2 { 
+            color: white !important; 
+        }
+        
+        .project-card h2::after {
+            background: linear-gradient(to right, white, transparent);
+        }
+        
+        .project-card p { color: #fdf2f8 !important; }
+        
+        .project-card .contact-btn {
+            background-color: white;
+            color: var(--dark-pink);
+            text-align: center;
+            display: block;
+            margin-top: 1.5rem;
+        }
+        
+        .project-card .contact-btn:hover {
+            background-color: var(--soft-pink);
+            color: var(--dark-pink);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            color: var(--dark-pink);
+            font-size: 0.85rem;
+            background: rgba(255,255,255,0.5);
+            border-top: 1px solid var(--border-glass);
+            font-weight: 500;
+        }
+        
+        /* Clean Link Styling */
+        a { transition: color 0.2s; text-decoration: none; }
+        header a:not(.contact-btn):hover { color: var(--hot-pink) !important; text-decoration: underline; }
+
+        /* Responsive Design tweaks */
+        @media (max-width: 900px) {
+            .header-container { gap: 1.5rem; padding: 0 5%; }
             h1 { font-size: 2rem; }
-            .profile-photo { width: 120px; height: 120px; }
+            .main-container { grid-template-columns: 1fr; gap: 1rem; }
+        }
+        
+        @media (max-width: 600px) {
+            header { padding: 1.5rem 5%; }
+            .header-container { flex-direction: column; text-align: center; gap: 1rem; }
+            h2 { font-size: 1.4rem; }
+            .profile-photo { width: 110px; height: 110px; }
         }
     </style>
 </head>
@@ -124,7 +323,7 @@
             <h1>Karolina Debniak</h1>
             <div class="headline">Accounting Major | Rutgers Business School | Audit Professional</div>
             <p>Roxbury, New Jersey &bull; <a href="mailto:karolina.debniak@rutgers.edu" style="color: inherit;">karolina.debniak@rutgers.edu</a></p>
-            <a href="https://www.linkedin.com/in/karolina-debniak" class="contact-btn">View LinkedIn Profile</a>
+            <a href="https://www.linkedin.com/in/karolina-debniak" target="_blank" class="contact-btn">View LinkedIn Profile</a>
         </div>
     </div>
 </header>
@@ -134,7 +333,7 @@
         <div class="card">
             <h2>About</h2>
             <p>I am a dedicated Accounting student at The Honors College of Rutgers, pursuing my CPA license with an expected graduation in May 2026. With extensive, hands-on progressive audit experience, my professional focus lies in public accounting, specifically in commercial, 401(k), and PILOT (Payment in Lieu of Taxes) audits.</p>
-            <p>Outside the office and classroom, I am an avid competitive sailor and currently serve as the President of the Rutgers University Sailing Team, where I balance high-stakes leadership, team management, and a lifelong passion for being on the water.</p>
+            <p>Outside the office and classroom, I am an avid competitive sailor and a community-driven leader. Whether I am managing team dynamics on the water or engaging with campus organizations, I thrive in environments that require teamwork, precision, and dedication.</p>
         </div>
 
         <div class="card">
@@ -176,7 +375,7 @@
             </div>
             
             <br>
-            <div class="company-header">Leadership</div>
+            <div class="company-header">Leadership & Campus Involvement</div>
 
             <div class="exp-item">
                 <span class="exp-title">President</span>
@@ -192,6 +391,23 @@
                 <span class="exp-meta">Rutgers University Sport Club Advisory Board | Mar 2023 – June 2024</span>
                 <ul>
                     <li>Collaborated with a team to strategically oversee and allocate an annual budget exceeding $80,000 across 57+ Rutgers Club Sports.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-title">Active Member</span>
+                <span class="exp-meta">Rutgers Catholic | Ongoing</span>
+                <ul>
+                    <li>Engage in community service, fellowship events, and faith-based initiatives to foster a supportive community on campus.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <span class="exp-title">Competitive Sailor</span>
+                <span class="exp-meta">Raritan Yacht Club & Lake Hopatcong Yacht Club</span>
+                <ul>
+                    <li>Competitively race J/105 sailboats and E-scows in high-stakes regattas.</li>
+                    <li>Emphasize teamwork, precise communication, and quick decision-making under high-pressure conditions on the water.</li>
                 </ul>
             </div>
         </div>
@@ -219,17 +435,31 @@
             <div class="skill-tag">Polish (Advanced)</div>
         </div>
 
-        <div class="card" style="background: var(--dark-pink); color: white;">
-            <h2 style="color: white; border-color: white;">Interactive Project</h2>
-            <p style="color: #fbcfe8;">I built a JavaScript-based quiz application to help test maritime knowledge. Check out my custom Sailing Final Prep app to test your knowledge on right-of-ways, buoy colors, and nautical knots!</p>
-            <a href="quiz.html" class="contact-btn" style="background-color: white; color: var(--dark-pink); text-align: center; display: block;">Play the Sailing Quiz</a>
+        <div class="card project-card">
+            <h2>Interactive Project</h2>
+            <p>I built a JavaScript-based quiz application to help test maritime knowledge. Check out my custom Sailing Final Prep app to test your knowledge on right-of-ways, buoy colors, and nautical knots!</p>
+            <a href="quiz.html" class="contact-btn">Play the Sailing Quiz</a>
         </div>
     </div>
 </div>
 
-<footer style="text-align: center; padding: 2rem; color: #a0aec0; font-size: 0.8rem;">
-    &copy; 2026 Karolina Debniak | Built with GitHub Pages
+<footer>
+    &copy; 2026 Karolina Debniak | Built with dynamic vibes for GitHub Pages
 </footer>
+
+<script>
+    // Subtle header shrink effect on scroll
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.style.padding = '1rem 10%';
+            header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+        } else {
+            header.style.padding = '2rem 10%';
+            header.style.boxShadow = 'none';
+        }
+    });
+</script>
 
 </body>
 </html>
